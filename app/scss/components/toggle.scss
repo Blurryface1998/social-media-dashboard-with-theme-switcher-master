@@ -1,0 +1,74 @@
+@use "../util" as *;
+
+.toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint(large) {
+        justify-content: end;
+    }
+
+    label {
+        font-weight: 700;
+        cursor: pointer;
+
+        @include breakpoint(large) {
+            padding-right: rem(20);
+        }
+    }
+
+    .hidden {
+        position: absolute;
+        top: 0;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+    }
+
+    &__wrapper {
+        position: relative;
+        height: rem(24);
+
+        input[type=radio] {
+            margin: 0 rem(-2) 0 rem(-2);
+            opacity: 0;
+            width: rem(28);
+            height: rem(24);
+            cursor: pointer;
+        }
+    }
+
+    &__background {
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        border-radius: rem(12);
+        background-color: var(--toggle);
+        pointer-events: none;
+    }
+
+    .hover {
+        background-image: linear-gradient(225deg, var(--Toggle-LG-end) 20%, var(--Toggle-LG-start) 80%);
+    }
+
+    &__button {
+        position: absolute;
+        left: rem(3);
+        top: rem(3);
+        right: 100%;
+        width: rem(19);
+        height: rem(19);
+        border-radius: 50%;
+        background-color: var(--white-BG);
+        transition: all 150ms ease-in-out;
+        cursor: pointer;    
+    }
+    
+    #lightM:checked ~ .toggle__button {
+        left: calc(100% - 22px);
+        right: 3px;
+    }
+}

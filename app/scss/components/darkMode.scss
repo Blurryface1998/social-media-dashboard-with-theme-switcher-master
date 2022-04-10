@@ -1,0 +1,51 @@
+
+.dark {
+    background-color: var(--veryDarkBlue-BG);
+    color: var(--desaturatedBlue-Text);
+}
+
+
+
+.darkHeader {
+    background-color: var(--veryDarkBlue-TopBGPattern);
+    
+    h1 {
+        color: var(--white-Text);
+    }
+
+    .darkRadioBG {
+        background-image: linear-gradient(225deg, var(--Toggle-LG-end) 20%, var(--Toggle-LG-start) 80%);
+    }
+
+    .darkToogleBtn {
+        background-color: var(--darkDesaturatedBlue-CardBG);
+    }
+
+}
+
+
+.cardsDark {
+    background-color: var(--darkDesaturatedBlue-CardBG);
+    
+    &:hover {
+        transition: background 150ms ease-in-out;
+        background-color: var(--dark-card-hover);
+        cursor: pointer;
+    }
+
+    h2 {
+        color: var(--white-Text);
+    }
+
+    h3 {
+        color: var(--white-Text);
+    }
+}
+
+.darkColor {
+
+    h2 {
+        color: var(--white-Text);
+    }
+}
+

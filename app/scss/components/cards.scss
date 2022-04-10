@@ -1,0 +1,265 @@
+@use "../util" as *;
+
+.header {
+    padding-inline: rem(23);
+    padding-block-start: rem(26);
+    font-size: rem(14);
+    background-color: var(--veryPaleBlue-TopBGPattern);
+    height: rem(225);
+
+    @include breakpoint(large) {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-inline: rem(150);
+    }
+    
+    &__title {
+        line-height: 1.5;
+        padding-bottom: rem(15);
+        border-bottom: 1px solid var(--darkGrayishBlue-Text);
+        
+        @include breakpoint(large) {
+            border-bottom: none;
+        }
+
+        h1 {
+            color: var(--VeryDarkBlue-Text);
+            font-size: rem(25);
+
+            @include breakpoint(large) {
+                font-size: rem(28);
+            }
+        }
+
+
+        span {
+            font-weight: 700;
+        }
+    }
+    
+    &__toggle {
+        border: none;
+        padding-block: rem(20);
+
+        @include breakpoint(large) {
+            margin-block: 0;
+            margin-inline: auto;
+            flex-grow: 1;
+        }
+    }
+}
+
+
+
+
+.cards {
+    
+    @include breakpoint(large) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(30);
+    }
+}
+
+
+main {
+    @include breakpoint(large) {
+        margin-top: rem(-90);
+    }
+}
+
+.card {
+    padding: rem(25);
+    margin-bottom: rem(30);
+    background-color: var(--lightGrayishBlue-CardBG);
+    border-radius: rem(5);
+    display: grid;
+    grid-template-areas: 
+    "image image name name"
+    "num num num num"
+    "today today today today";
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        transition: background 150ms ease-in-out;
+        background-color: var(--light-card-hover);
+        cursor: pointer;
+    }
+
+    @include breakpoint(large) {
+        padding: rem(20);
+        margin-bottom: 0;
+    }
+
+    &--facebook {
+        margin-top: rem(-36);
+        border-top: rem(7) solid var(--facebook);
+
+        @include breakpoint(large) {
+           margin-top: 0;   
+        }
+    }
+
+    &--twitter {
+        border-top: rem(7) solid var(--twitter);
+    }
+
+    &--instagram {
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: rem(7);
+            background-image: linear-gradient(to right, var(--instagram-LG-start) 0%, var(--instagram-LG-end) 60%);
+        }
+    }
+
+    &--youtube {
+        border-top: rem(7) solid var(--youTube);
+    }
+
+    &__platform {
+        grid-area: image;
+        justify-self: end;
+        align-self: center;
+
+        img {
+            vertical-align: middle;
+        }
+    }
+    
+    &__username {
+        grid-area: name;
+        justify-self: start;
+        align-self: center;
+        padding-inline-start: rem(5);
+        font-weight: 700;
+        font-size: rem(14);
+    }
+
+    &__followers {
+        grid-area: num;
+        justify-self: center;
+        padding-block: rem(20);
+        text-align: center;
+
+        h2 {
+            font-size: rem(50);
+            font-weight: 700;
+            color: var(--VeryDarkBlue-Text);
+        }
+
+        span {
+            font-size: rem(14);
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 4px;  
+        }
+    }
+
+    &__change {
+        grid-area: today;
+        text-align: center;
+        padding-top: rem(15);
+
+        img {
+            vertical-align: middle;
+        }
+        
+        span {
+            font-size: rem(14);
+            font-weight: 700;
+        }
+        
+        &--up {
+            color: var(--limeGreen);
+        }
+
+        &--down {
+            color: var(--brightRed);
+        }
+    }
+}
+
+
+
+.overview {
+
+    h2 {
+        padding-block: rem(20) rem(30);
+
+        
+        @include breakpoint(large) {
+            padding-block: rem(40) rem(20);
+        }
+
+    }
+     
+    .card-grid {
+        display: grid;
+        grid-template-areas: 
+        "view view img img"
+        "number number today today";
+        gap: rem(15);
+
+        @include breakpoint(large) {
+            padding: rem(30);
+        }
+        
+        &__subtitle {
+            grid-area: view;
+            justify-self: start;
+            align-self: center;
+            font-weight: 700;
+        }
+
+        img {
+            grid-area: img;
+            justify-self: end;
+            align-self: center;
+        }
+
+        &__count--small {
+            grid-area: number;
+            justify-self: start;
+            align-self:center;
+            vertical-align: middle;
+            font-size: rem(25);
+            color: var(--VeryDarkBlue-Text);
+
+            @include breakpoint(large) {
+                align-self: center;
+            }
+        }
+
+        &__change {
+            grid-area: today;
+            justify-self: end;
+            align-self: flex-end;
+            font-size: rem(14);
+            font-weight: 700;
+
+            @include breakpoint(large) {
+                align-self: center;
+            }
+
+            img {
+                vertical-align: middle;
+            }
+
+            &--up {
+                color: var(--limeGreen);
+            }
+
+            &--down {
+                color: var(--brightRed);
+            }
+        }
+    }
+}
