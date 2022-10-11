@@ -46,15 +46,15 @@
         width: 100%;
         top: 0;
         border-radius: rem(12);
-        background-color: var(--toggle);
+        background: var(--toggleBtn);
         pointer-events: none;
     }
-    
+   /*
     .hover {
-        background-image: linear-gradient(225deg, var(--Toggle-LG-end) 20%, var(--Toggle-LG-start) 80%);
+        background-image: var(--toggleBtn);
         transition: background-image 5s ease-in-out;
     }
-    
+    */
     
     &__button {
         position: absolute;
@@ -64,7 +64,7 @@
         width: rem(19);
         height: rem(19);
         border-radius: 50%;
-        background-color: var(--white-BG);
+        background-color: var(--cardBg);
         transition: all 150ms ease-in-out;
         cursor: pointer;
     }

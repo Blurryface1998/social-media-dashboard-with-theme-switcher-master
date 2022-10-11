@@ -16,8 +16,9 @@
     --white-Text: hsl(0, 0%, 100%);
     --Toggle-LG-start: hsl(210, 78%, 56%);
     --Toggle-LG-end: hsl(146, 68%, 55%);
+    --toggleBtn-dark: linear-gradient(225deg, var(--Toggle-LG-end) 0%, var(--Toggle-LG-start) 98.02%);
     --dark-card-hover: hsl(228, 25%, 27%);
-    
+
     /* Light Theme */
     --toggle: hsl(230, 22%, 74%);
     --white-BG: hsl(0, 0%, 100%);
@@ -29,4 +30,46 @@
 
     /* Transition */
     --transition: all 150ms ease-in-out;
+
+    --toggleBtn: var(--toggleBtn-dark);
+    --bg: var(--veryDarkBlue-BG);
+    --bgTop: var(--veryDarkBlue-TopBGPattern);
+    --cardBg: var(--darkDesaturatedBlue-CardBG);
+    --textColor: var(--desaturatedBlue-Text);
+    --textColor2: var(--white-Text);
+    --cardHover: var(--dark-card-hover);
+
+    
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --toggleBtn: var(--toggle);
+        --bg: var(--white-BG);
+        --bgTop: var(--veryPaleBlue-TopBGPattern);
+        --cardBg: var(--lightGrayishBlue-CardBG);
+        --textColor: var(--darkGrayishBlue-Text);
+        --textColor2: var(--VeryDarkBlue-Text);
+        --cardHover: var(--light-card-hover);
+    }
+}
+
+body.dark {
+    --toggleBtn: var(--toggleBtn-dark);
+    --bg: var(--veryDarkBlue-BG);
+    --bgTop: var(--veryDarkBlue-TopBGPattern);
+    --cardBg: var(--darkDesaturatedBlue-CardBG);
+    --textColor: var(--desaturatedBlue-Text);
+    --textColor2: var(--white-Text);
+    --cardHover: var(--dark-card-hover);
+}
+
+body.light {
+    --toggleBtn: var(--toggle);
+    --bg: var(--white-BG);
+    --bgTop: var(--veryPaleBlue-TopBGPattern);
+    --cardBg: var(--lightGrayishBlue-CardBG);
+    --textColor: var(--darkGrayishBlue-Text);
+    --textColor2: var(--VeryDarkBlue-Text);
+    --cardHover: var(--light-card-hover);
 }
